@@ -35,19 +35,19 @@ class Despesas extends StatefulWidget {
 
 class _DespesasState extends State<Despesas> {
 
-  final _transactions = [
-    Transaction(
-      id: 't1',
-      title: 'Novo tenis de corrida', 
-      value: 310.0,
-       date: DateTime.now()
-      ),
-      Transaction(
-      id: 't2',
-      title: 'Conta luz', 
-      value: 211.30,
-       date: DateTime.now()
-      ),
+  final List<Transaction> _transactions = [
+   // Transaction(
+    //  id: 't1',
+    //  title: 'Novo tenis de corrida', 
+    //  value: 310.0,
+    //   date: DateTime.now()
+    //  ),
+    //  Transaction(
+     // id: 't2',
+    //  title: 'Conta luz', 
+     // value: 211.30,
+    //   date: DateTime.now()
+    //  ),
 
 
   ];
