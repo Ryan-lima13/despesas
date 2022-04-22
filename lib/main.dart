@@ -81,8 +81,7 @@ _openTransactionFormModel(BuildContext context){
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    final appBar =  AppBar(
         title: const Text("Despesas Pessoais"),
         actions: [
           IconButton(
@@ -92,16 +91,28 @@ _openTransactionFormModel(BuildContext context){
           
         ],
         
-        ),
+        );
+
+    final availableHeight = MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+    return Scaffold(
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           
           crossAxisAlignment: CrossAxisAlignment.stretch,
          
           children: [
-            Chart(_recentTrasanctions ),
+            Container(
+              height: availableHeight * 0.3,
+              child: Chart(_recentTrasanctions )
+              ),
 
-            TransactionList(_transactions,_removeTransaction),
+            Container(
+              height: availableHeight * 0.7,
+
+              child: TransactionList(_transactions,_removeTransaction)),
             
             
           ],

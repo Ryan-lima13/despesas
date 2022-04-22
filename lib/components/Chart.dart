@@ -43,6 +43,7 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final avaibelHeight = MediaQuery.of(context).size.height;
     
     return Card(
       elevation: 6,
