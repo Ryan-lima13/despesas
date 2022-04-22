@@ -63,6 +63,12 @@ class _DespesasState extends State<Despesas> {
       });
       Navigator.of(context).pop();
   }
+  _removeTransaction(String id){
+    setState(() {
+        _transactions.removeWhere((tr) => tr.id == id);
+    });
+
+  }
 _openTransactionFormModel(BuildContext context){
   showModalBottomSheet(
     context: context,
@@ -95,7 +101,7 @@ _openTransactionFormModel(BuildContext context){
           children: [
             Chart(_recentTrasanctions ),
 
-            TransactionList(_transactions),
+            TransactionList(_transactions,_removeTransaction),
             
             
           ],
